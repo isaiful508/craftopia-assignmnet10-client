@@ -10,7 +10,7 @@ import { AuthContext } from "../../../providers/AuthProviders";
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, logOut} = useContext(AuthContext);
 
 
    const [passwordError, setPasswordError] = useState("");
@@ -61,7 +61,7 @@ const Register = () => {
            .then(result => {
                console.log(result.user)
                toast.success('Registration Successfully');
-            //    logOut();
+               logOut();
                navigate("/login");
 
 
@@ -92,7 +92,7 @@ const Register = () => {
         <div className="bg-[] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
 
             <Helmet>
-                <title>Home Hive | Register </title>
+                <title>Craftopia | Register </title>
             </Helmet>
 
             <h2 className="text-4xl mt-8   text-center poppins-bold ">Please Register Here</h2>
