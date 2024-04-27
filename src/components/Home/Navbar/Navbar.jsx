@@ -7,16 +7,7 @@ const Navbar = () => {
 
     const { logOut, user } = useContext(AuthContext);
 
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const handleDropdownOpen = () => {
-        setIsDropdownOpen(true);
-    };
-
-    const handleDropdownClose = () => {
-        setIsDropdownOpen(false);
-    };
-
+    
     const handleLogOut = () => {
         logOut()
             .then()

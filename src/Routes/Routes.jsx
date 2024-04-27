@@ -9,6 +9,7 @@ import AddCraftItem from "../components/Pages/AddCraftItem/AddCraftItem";
 import ArtAndCraftLists from "../components/Pages/ArtAndCraftLists/ArtAndCraftLists";
 import Register from "../components/Pages/Register/Register";
 import Login from "../components/Pages/Login/Login";
+import PrivateRoutes from "./PrivateRoutes";
 
   const router = createBrowserRouter([
     {
@@ -25,11 +26,11 @@ import Login from "../components/Pages/Login/Login";
         },
         {
             path:'/add_craft_item',
-            element:<AddCraftItem></AddCraftItem>
+            element:<PrivateRoutes><AddCraftItem></AddCraftItem></PrivateRoutes>
         },
         {
             path:'/art_&_craft_lists',
-            element:<ArtAndCraftLists></ArtAndCraftLists>
+            element:<PrivateRoutes><ArtAndCraftLists></ArtAndCraftLists></PrivateRoutes>
         },
         {
             path:'/register',

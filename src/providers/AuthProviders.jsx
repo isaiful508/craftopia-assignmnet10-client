@@ -1,10 +1,6 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, GithubAuthProvider, getAuth } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { auth } from './../Firebase/firebase-config';
-
-
-
-
+import { auth } from "../Firebase/firebase-config";
 
 
 

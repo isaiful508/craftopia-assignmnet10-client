@@ -30,7 +30,7 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate()
-    // console.log('in login page location',location);
+    console.log('in login page location',location);
 
 
     const handleLogin = e => {
