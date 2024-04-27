@@ -1,6 +1,6 @@
 import {
     createBrowserRouter,
-    RouterProvider,
+   
   } from "react-router-dom";
 import Root from "../components/Root/Root";
 import Home from "../components/Home/Home";
@@ -10,6 +10,7 @@ import ArtAndCraftLists from "../components/Pages/ArtAndCraftLists/ArtAndCraftLi
 import Register from "../components/Pages/Register/Register";
 import Login from "../components/Pages/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
+import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
 
   const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ import PrivateRoutes from "./PrivateRoutes";
         {
             path:'/login',
             element:<Login></Login>
+        },
+        {
+          path:'/view_details/:id',
+          element:<PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
+          loader:({params}) => fetch(`http://localhost:5000/view_details/${params.id}`)
         }
       ]
     },
