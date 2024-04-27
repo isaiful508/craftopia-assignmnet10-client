@@ -18,7 +18,9 @@ import PrivateRoutes from "./PrivateRoutes";
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader: () => fetch('http://localhost:5000/craft_items')
+
         },
         {
             path:'/all_art_&_craft_items',
