@@ -33,8 +33,9 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
             element:<PrivateRoutes><AddCraftItem></AddCraftItem></PrivateRoutes>
         },
         {
-            path:'/art_&_craft_lists',
+            path:'/art_&_craft_lists/',
             element:<PrivateRoutes><ArtAndCraftLists></ArtAndCraftLists></PrivateRoutes>
+            
         },
         {
             path:'/register',
