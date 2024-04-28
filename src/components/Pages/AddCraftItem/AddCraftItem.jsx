@@ -32,7 +32,7 @@ const AddCraftItem = () => {
 
         //send data to the server
 
-        fetch('http://localhost:5000/craft_items', {
+        fetch('https://craftopia-server-assignment10.vercel.app/craft_items', {
         method : 'POST',
         headers: {
             'content-type' : 'application/json'

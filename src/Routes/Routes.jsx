@@ -20,7 +20,7 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/craft_items')
+            loader: () => fetch('https://craftopia-server-assignment10.vercel.app/craft_items')
 
         },
         {
@@ -46,7 +46,7 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
         {
           path:'/view_details/:id',
           element:<PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader:({params}) => fetch(`http://localhost:5000/view_details/${params.id}`)
+          loader:({params}) => fetch(`https://craftopia-server-assignment10.vercel.app/view_details/${params.id}`)
         }
       ]
     },
