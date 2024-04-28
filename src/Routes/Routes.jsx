@@ -25,7 +25,8 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
         },
         {
             path:'/all_art_&_craft_items',
-            element:<AllArtAndCrafts></AllArtAndCrafts>
+            element:<AllArtAndCrafts></AllArtAndCrafts>,
+            loader: () => fetch('https://craftopia-server-assignment10.vercel.app/craft_items')
         },
         {
             path:'/add_craft_item',
