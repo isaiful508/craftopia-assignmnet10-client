@@ -10,7 +10,7 @@ const Update = () => {
     const [craft, setCraft] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/update/${id}`)
+        fetch(`https://craftopia-server-assignment10.vercel.app/update/${id}`)
             .then(res => res.json())
             .then(data => {
                 setCraft(data);
@@ -38,7 +38,7 @@ const Update = () => {
         console.log(newUpdatedCraft);
 
 
-        fetch(`http://localhost:5000/updateCraft/${id}`, {
+        fetch(`https://craftopia-server-assignment10.vercel.app/updateCraft/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

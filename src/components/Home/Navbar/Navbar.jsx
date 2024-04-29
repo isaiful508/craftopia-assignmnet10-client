@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar container mx-auto bg-base-100">
+        <div className="navbar mt-4 container mx-auto bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,33 +24,36 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
                         <NavLink to='/'
-                            className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>Home</NavLink>
+                            className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400]' : 'poppins-regular'}>Home</NavLink>
 
 
                         <NavLink to='/all_art_&_craft_items'
-                            className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>All Art & craft Items</NavLink>
+                            className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400]' : 'poppins-regular'}>All Art & craft Items</NavLink>
 
                         <NavLink to='/add_craft_item'
-                            className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>Add Craft Item</NavLink>
+                            className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400]' : 'poppins-regular'}>Add Craft Item</NavLink>
                         <NavLink to='/art_&_craft_lists'
-                            className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>My Art&Craft List</NavLink>
+                            className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400]' : 'poppins-regular'}>My Art&Craft List</NavLink>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Craftopia</a>
+               <div className="flex items-center">
+               <img className="w-10" src={"https://i.ibb.co/Q952KYR/art-logo-removebg-preview.png"} alt="" />
+                <a className="btn btn-ghost bg-clip-text text-transparent bg-gradient-to-r from-[#d4a37b] to-[#FFB400] sora-700 lg:text-3xl text-xl">Craftopia</a>
+               </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu  flex items-center space-x-6 menu-horizontal px-1">
                     <NavLink to='/'
-                        className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>Home</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400] sora-500' : 'sora-400'}>Home</NavLink>
 
 
                     <NavLink to='/all_art_&_craft_items'
-                        className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>All Art & craft Items</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400] sora-500' : 'sora-400'}>All Art & craft Items</NavLink>
 
                     <NavLink to='/add_craft_item'
-                        className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>Add Craft Item</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400] sora-500' : 'sora-400'}>Add Craft Item</NavLink>
                     <NavLink to='/art_&_craft_lists'
-                        className={({ isActive }) => isActive ? 'text-[#7111EB] poppins-medium rounded-lg border-2 p-2 border-[#7111EB]' : 'poppins-regular'}>My Art&Craft List</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FFB400] poppins-medium rounded-lg border-2 p-2 border-[#FFB400] sora-500' : 'sora-400'}>My Art&Craft List</NavLink>
                 </ul>
             </div>
 
@@ -90,15 +93,15 @@ const Navbar = () => {
             <div className="navbar-end">
 
                     {
-                        user? <div className="dropdown dropdown-end">
+                        user? <div className="dropdown dropdown-end  ">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img src={user?.photoURL || "Not Found" } />
                                 </div>
                             </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <ul tabIndex={0} className="menu menu-sm bg-[#d4a37b] text-white dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
                                 <li>
-                                    <button className="btn btn-sm  btn-ghost">{user?.displayName||'user name not found'}</button>
+                                    <button className="btn  btn-sm  btn-ghost">{user?.displayName||'user name not found'}</button>
 
                                 </li>
                                 <li>
@@ -110,10 +113,10 @@ const Navbar = () => {
                             </ul>
                         </div>
                             :
-                            <div>
-                            <Link to='/login' className="btn text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400]" > Login</Link>
+                            <div className="flex gap-2">
+                            <Link to='/login' className="btn rounded-2xl text-white bg-gradient-to-r from-[#d4a37b] to-[#FFB400]" > Login</Link>
 
-                            <Link to='/register' className="btn bg-[#7111EB] text-white">Register</Link>
+                            <Link to='/register' className="btn rounded-2xl bg-gradient-to-r from-[#d4a37b] to-[#FFB400] text-white">Register</Link>
                         </div>
                     }
                 </div>
