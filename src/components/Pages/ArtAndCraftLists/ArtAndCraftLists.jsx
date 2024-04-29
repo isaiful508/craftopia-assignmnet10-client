@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const ArtAndCraftLists = () => {
@@ -27,7 +28,7 @@ const ArtAndCraftLists = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://craftopia-server-assignment10.vercel.app/delete/${id}`, {
                     method: "DELETE"
                 })
                 .then(res => res.json())
@@ -61,7 +62,7 @@ const ArtAndCraftLists = () => {
                     <h2 className="card-title">{item.itemName}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions ">
-                        <button className="btn btn-primary">Update</button>
+                        <Link to={`/update/${item._id}`}className="btn btn-primary">Update</Link>
                         <button onClick={() => handleDelete(item._id)} className="btn btn-primary">Delete</button>
                     </div>
                 </div>

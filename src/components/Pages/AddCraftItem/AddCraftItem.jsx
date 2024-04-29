@@ -63,9 +63,9 @@ const AddCraftItem = () => {
 
 
     return (
-        <div className="container md:w-3/4 lg:1/2 mx-auto border-2  p-6 dark:bg-gray-100 dark:text-gray-900">
+        <div className="container md:w-3/4 lg:1/2 mx-auto   p-6 dark:bg-gray-100 dark:text-gray-900">
 
-            <form onSubmit={handAddCraftItem} className=" flex flex-col  border-2  space-y-12">
+            <form onSubmit={handAddCraftItem} className=" flex flex-col space-y-12">
 
 
 

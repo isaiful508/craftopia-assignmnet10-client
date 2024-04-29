@@ -11,6 +11,7 @@ import Register from "../components/Pages/Register/Register";
 import Login from "../components/Pages/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
+import Update from "../components/Pages/Update/Update";
 
   const router = createBrowserRouter([
     {
@@ -49,6 +50,11 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
           path:'/view_details/:id',
           element:<PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
           loader:({params}) => fetch(`https://craftopia-server-assignment10.vercel.app/view_details/${params.id}`)
+        },
+        {
+          path:'/update/:id',
+          element:<Update></Update>,
+         
         }
       ]
     },
