@@ -8,6 +8,7 @@ const ArtAndCraftLists = () => {
     const { user } = useContext(AuthContext);
     const [craft, setCraft] = useState([]);
     const [control, setControl] = useState(false);
+    const [filter, setFilter] = useState("");
     useEffect(() => {
         fetch(`https://craftopia-server-assignment10.vercel.app/art_&_craft_lists/${user?.email}`)
             .then(res => res.json())
@@ -49,18 +50,42 @@ const ArtAndCraftLists = () => {
     }
 
 
+    const handleFilter = (e) =>{
+        setFilter(e.target.value);
+    }
+
+    const filterItems = filter ? craft.filter((item) => item.customization === filter) : craft ;
+
+
     return (
         <div className=" container mx-auto ">
+
+        <div className="flex justify-end mb-4">
+            <select
+            value={filter}
+            onChange={handleFilter}
+            className="p-2 border rounded-md"
+            >
+                <option value="">Filter By Customization</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+
+
+
            <div className="grid  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
            {
             
-            craft.map(item => 
+            filterItems.map(item => 
             <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                     <img src={item.photoURL} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{item.itemName}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p>{item.shortDescription}</p>
+                    <p>Customization:  {item.customization}</p>
                     <div className="card-actions ">
                         <Link to={`/update/${item._id}`}className="btn btn-primary">Update</Link>
                         <button onClick={() => handleDelete(item._id)} className="btn btn-primary">Delete</button>

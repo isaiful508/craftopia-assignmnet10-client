@@ -16,7 +16,7 @@ const ViewDetails = () => {
 
         <p className="sora-500">Rating:  {craftDetails.rating}</p>
         <p className="sora-500">Customization:  {craftDetails.customization}</p>
-        <p className="sora-500"> {craftDetails.processingTime} weeks</p>
+        <p className="sora-500"> {craftDetails.processingTime}</p>
         <p className="sora-500">Status:  {craftDetails.stockStatus}</p>
         
       </div>
