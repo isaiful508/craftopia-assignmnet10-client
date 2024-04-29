@@ -7,7 +7,7 @@ import { Pagination } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <div className="container mx-auto mt-8">
+        <div className="container mx-auto mt-16">
              <div>
             <Swiper
             pagination={{
