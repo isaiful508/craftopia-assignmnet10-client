@@ -80,7 +80,7 @@ const ArtAndCraftLists = () => {
 
 
 
-           <div className="grid  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+           <div className="grid mb-6  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
            {
             
             filterItems.map(item => 
@@ -99,12 +99,15 @@ const ArtAndCraftLists = () => {
                   <p className="sora-500">{item.shortDescription}</p>
         
                   <div className="flex items-center mt-4 justify-between">
-                  <p className="flex items-center sora-500">Price:  <FaDollarSign className="text-xl"></FaDollarSign> <span className="sora-500 bg-[#FFB400] btn rounded-full">{item.price}</span></p>
-                  <p className="sora-500 "> <span className="sora-600">Status:</span> <span className="btn rounded-full bg-[#FFB400]">{item.stockStatus}</span></p>
+
+                  <p className="flex items-center sora-500">Price:  <FaDollarSign className="text-xl"></FaDollarSign> <span className="sora-500 bg-[#FFB400] btn rounded-full text-white">{item.price}</span></p>
+
+                  <p className="sora-500 flex items-center"> <span className="sora-600">Status:</span> <span className="btn rounded-full bg-[#FFB400] text-white">{item.stockStatus}</span></p>
                   </div>
-                    <div className=" card-actions  ">
-                        <Link to={`/update/${item._id}`}className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400]">Update</Link>
-                        <button onClick={() => handleDelete(item._id)} className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400]">Delete</button>
+
+                    <div className=" card-actions mt-4 ">
+                        <Link to={`/update/${item._id}`}className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400] text-white">Update</Link>
+                        <button onClick={() => handleDelete(item._id)} className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400] text-white">Delete</button>
                     </div>
                 </div>
             </div>)

@@ -1,15 +1,29 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 
 
 const SubCategory = () => {
-    const categoryLoader = useLoaderData();
-    console.log(categoryLoader);
+    // const categoryLoader = useLoaderData();
+    // console.log(categoryLoader);
+
+
+    useEffect(() =>{
+        fetch("http://localhost:5000/subCategory")
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+    })
+
+
+
+
     return (
         <div className="container mx-auto mt-8 mb-8">
 
             <div className="grid border-2 border-[#d4a37b] rounded-lg p-4  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-
+{/* 
                 {
                     categoryLoader.map(item =>
                         <div
@@ -26,7 +40,7 @@ const SubCategory = () => {
                             </div>
                         </div>
                     )
-                }
+                } */}
             </div>
 
         </div>

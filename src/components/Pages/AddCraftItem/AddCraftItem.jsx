@@ -90,12 +90,12 @@ const AddCraftItem = () => {
                             <label className="text-sm">Subcategory Name</label>
 
                             <select className="w-full input input-bordered" name="sub_category">
-                                <option value="Landscape Painting">Landscape Painting</option>
-                                <option value="Portrait Drawing">Portrait Drawing</option>
-                                <option value="Watercolour Painting">Watercolour Painting</option>
-                                <option value="Oil Painting">Oil Painting</option>
-                                <option value="Charcoal Sketching">Charcoal Sketching</option>
-                                <option value="Cartoon Drawing">Cartoon Drawing</option>
+                                <option value="LandscapePainting">Landscape Painting</option>
+                                <option value="PortraitDrawing">Portrait Drawing</option>
+                                <option value="WatercolourPainting">Watercolour Painting</option>
+                                <option value="OilPainting">Oil Painting</option>
+                                <option value="CharcoalSketching">Charcoal Sketching</option>
+                                <option value="CartoonDrawing">Cartoon Drawing</option>
                             </select>
 
                            </div>

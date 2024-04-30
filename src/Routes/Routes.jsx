@@ -60,9 +60,9 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
          
         },
         {
-          path:'/subCategory/:id',
+          path:'/subCategory',
           element:<SubCategory></SubCategory>,
-          loader: () => fetch("http://localhost:5000/subCategory")
+          // loader: () => fetch("http://localhost:5000/subCategory")
         }
       ]
     },
