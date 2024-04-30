@@ -1,12 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaDollarSign } from "react-icons/fa";
+import { useTypewriter } from "react-simple-typewriter";
 
 
 
 const AllArtAndCrafts = () => {
 
     const allArtAndCrafts = useLoaderData();
-
+    const [typeEffect] = useTypewriter({
+        words:['Discover the Magic of Art and Crafts'],
+        loop:{},
+        typeSpeed:100,
+        deleteSpeed: 40
+    })
 
     return (
 

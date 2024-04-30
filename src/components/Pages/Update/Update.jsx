@@ -35,7 +35,7 @@ const Update = () => {
 
         const newUpdatedCraft = { itemName, SubCategory, shortDescription, price, rating, customization, processingTime, stockStatus };
 
-        console.log(newUpdatedCraft);
+        // console.log(newUpdatedCraft);
 
 
         fetch(`https://craftopia-server-assignment10.vercel.app/updateCraft/${id}`, {
@@ -88,12 +88,12 @@ const Update = () => {
                             <label className="text-sm">Subcategory Name</label>
 
                             <select className="w-full input input-bordered" name="sub_category" defaultValue={craft.SubCategory}>
-                                <option value="Landscape Painting">Landscape Painting</option>
-                                <option value="Portrait Drawing">Portrait Drawing</option>
-                                <option value="Watercolour Painting">Watercolour Painting</option>
-                                <option value="Oil Painting">Oil Painting</option>
-                                <option value="Charcoal Sketching">Charcoal Sketching</option>
-                                <option value="Cartoon Drawing">Cartoon Drawing</option>
+                                <option value="Landscape_Painting">Landscape Painting</option>
+                                <option value="Portrait_Drawing">Portrait Drawing</option>
+                                <option value="Watercolour_Painting">Watercolour Painting</option>
+                                <option value="Oil_Painting">Oil Painting</option>
+                                <option value="Charcoal_Sketching">Charcoal Sketching</option>
+                                <option value="Cartoon_Drawing">Cartoon Drawing</option>
                             </select>
 
                         </div>

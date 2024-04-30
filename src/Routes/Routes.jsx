@@ -66,8 +66,9 @@ import CategoryCards from "../components/Home/SubCategory/CategoryCards";
           // loader: () => fetch("http://localhost:5000/subCategory")
         },
         {
-          path:'/categoryCards',
-          element:<CategoryCards></CategoryCards>
+          path:'/categoryCards/:subCategory',
+          element:<CategoryCards></CategoryCards>,
+          loader: ({params}) => fetch(`https://craftopia-server-assignment10.vercel.app/subCategory/${params.subCategory}`)
         }
       ]
     },

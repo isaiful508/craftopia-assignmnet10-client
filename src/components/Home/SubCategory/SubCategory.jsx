@@ -1,50 +1,47 @@
-import { useEffect } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+
+import Cards from './Cards';
 
 
 
 const SubCategory = () => {
     // const categoryLoader = useLoaderData();
     // console.log(categoryLoader);
+    const [items, setItems] = useState([]);
 
+    useEffect(() => {
+        fetch("https://craftopia-server-assignment10.vercel.app/subCategory")
+            .then(res => res.json())
+            .then(data => {
+                setItems(data)
+            })
+    }, [])
 
-    useEffect(() =>{
-        fetch("http://localhost:5000/subCategory")
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
-    })
+    
 
+    console.log(items);
 
 
 
     return (
         <div className="container mx-auto mt-8 mb-8">
 
+            <div>
+                <h2 className="text-4xl text-center sora-600 mt-4 mb-6">View By Sub Catyegory</h2>
+            </div>
+
             <div className="grid border-2 border-[#d4a37b] rounded-lg p-4  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-                <Link to="/categoryCards">
-                <button className="btn">Category</button>
-                </Link>
-{/* 
+
+
                 {
-                    categoryLoader.map(item =>
-                        <div
-                            key={item._id}
-                            className="card w-96 bg-base-100 shadow-xl">
-                            <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">{item.itemName}</h2>
-                                <h2 className="card-title">{item.SubCategory}</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
+                    items.map(item => <Cards item={item} key={item._id}>
+
+                    </Cards>
+                       
                     )
-                } */}
+                }
             </div>
 
         </div>

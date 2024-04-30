@@ -11,39 +11,6 @@ const githubProvider = new GithubAuthProvider();
 
 const AuthProviders = ({ children }) => {
 
-    const [category, setCategory] = useState([]);
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetch("https://craftopia-server-assignment10.vercel.app/craft_items")
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setCategory(data);
-            });
-    }, []);
-
-    useEffect(() => {
-        // This effect runs when category changes
-        if (category.length > 0) {
-            const processedItems = category.map(item => {
-                const { SubCategory } = item;
-                const splitSubCategory = SubCategory.split(" ");
-                const joinedSubCategory = splitSubCategory.join(""); // Joining the split words without spaces
-                return {
-                    ...item,
-                    joinedSubCategory: joinedSubCategory // Adding joinedSubCategory to the item object
-                };
-            });
-            setItems(processedItems);
-        }
-    }, [category]);
-
-    console.log(items)
-
-
-
-
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
