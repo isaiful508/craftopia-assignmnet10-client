@@ -14,6 +14,7 @@ import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
 import Update from "../components/Pages/Update/Update";
 import SubCategory from "../components/Home/SubCategory/SubCategory";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import CategoryCards from "../components/Home/SubCategory/CategoryCards";
 
   const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
           path:'/subCategory',
           element:<SubCategory></SubCategory>,
           // loader: () => fetch("http://localhost:5000/subCategory")
+        },
+        {
+          path:'/categoryCards',
+          element:<CategoryCards></CategoryCards>
         }
       ]
     },
