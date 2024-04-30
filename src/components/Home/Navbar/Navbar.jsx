@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
+import { Tooltip } from "react-tooltip";
 
 
 const Navbar = () => {
@@ -75,39 +76,6 @@ const Navbar = () => {
             </div>
 
 
-
-            {/* <div className="navbar-end">
-            {user ? (
-                <div className="dropdown dropdown-end" onMouseEnter={handleDropdownOpen} >
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src={user.photoURL || "Not Found"} alt="User Avatar" />
-                        </div>
-                    </label>
-                    {isDropdownOpen && (
-                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <button className="btn btn-sm btn-ghost">{user.displayName || 'User name not found'}</button>
-                            </li>
-                            <li>
-                                <button onClick={handleLogOut} className="btn btn-sm btn-ghost">Logout</button>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-            ) : (
-                <div>
-                    <Link to='/login' className="btn text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400]">Login</Link>
-                    <Link to='/register' className="btn bg-[#7111EB] text-white">Register</Link>
-                </div>
-            )}
-        </div> */}
-
-
-
-
-
-
             <div className="navbar-end">
                 {/* theme controller */}
                 <div className="mr-4">
@@ -122,9 +90,14 @@ const Navbar = () => {
                     user ? <div className="dropdown dropdown-end  ">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={user?.photoURL || "Not Found"} />
+                                <img data-tooltip-id="userTooltip" src={user?.photoURL || "Not Found"} />
                             </div>
                         </label>
+                        <Tooltip id="userTooltip" place="bottom">
+                            <span className="p-2 rounded-full  sora-500 ">
+                            <p>Click Here</p>
+                            </span>
+                        </Tooltip>
                         <ul tabIndex={0} className="menu menu-sm bg-[#d4a37b] text-white dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
                             <li>
                                 <button className="btn  btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
