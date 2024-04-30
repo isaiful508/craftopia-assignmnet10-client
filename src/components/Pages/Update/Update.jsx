@@ -51,9 +51,9 @@ const Update = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Craft Item Added Successfully',
+                        text: 'Item Updated Successfully',
                         icon: 'success',
-                        confirmButtonText: 'X'
+                        confirmButtonText: 'Close'
                     })
 
                     form.reset()

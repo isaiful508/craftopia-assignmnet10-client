@@ -9,7 +9,7 @@ const CraftCards = () => {
         const crafts = useLoaderData();
         const sixCrafts = crafts.slice(0, 6);
     return (
-        <div className="container mx-auto mt-10 mb-10">
+        <div className="container lg:w-full md:w-full w-96 mx-auto mt-10 mb-10">
             <div className="text-center mb-6 ml-8 p-4 lg:p-4">
                 <h2 className="text-4xl  sora-600">Discover the Magic of Art and Crafts</h2>
                 <p className="sora-500 mt-2 ">Art cards are tiny masterpieces, showcasing creativity and beauty in a compact format, perfect for sharing and collecting.</p>

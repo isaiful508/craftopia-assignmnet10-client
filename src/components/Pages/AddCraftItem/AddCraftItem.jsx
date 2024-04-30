@@ -45,9 +45,9 @@ const AddCraftItem = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Craft Item Added Successfully',
+                    text: 'Item Added Successfully',
                     icon: 'success',
-                    confirmButtonText: 'X'
+                    confirmButtonText: 'Close'
                   })
 
                   //reset form
@@ -63,7 +63,11 @@ const AddCraftItem = () => {
 
 
     return (
-        <div className="container md:w-3/4 lg:1/2 mx-auto   p-6 dark:bg-gray-100 dark:text-gray-900">
+        <div className="container md:w-3/4 lg:1/2 mx-auto   p-6 dark:bg-gray-100 dark:text-gray-900 bg-[#FFF7F0]  rounded-lg sora-500">
+
+            <div>
+               <h2 className="text-4xl text-center sora-600 mb-4 "> Add Your Arts And Crafts Items</h2>
+            </div>
 
             <form onSubmit={handAddCraftItem} className=" flex flex-col space-y-12">
 
@@ -194,7 +198,7 @@ const AddCraftItem = () => {
 
                 </div>
 
-                <div className="flex justify-center items-center input input-bordered border-2">
+                <div className="flex justify-center items-center input input-bordered border-2 bg-gradient-to-r from-[#d4a37b] to-[#FFB400] text-white sora-500">
                     <input className="" type="submit" value="Add Craft Item" />
                 </div>
 

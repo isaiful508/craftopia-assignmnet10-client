@@ -118,7 +118,7 @@ const Login = () => {
                 <title>Craftopia | Login </title>
             </Helmet>
 
-            <h2 className="text-4xl mt-8   text-center poppins-bold ">Please Login Here</h2>
+            <h2 className="text-4xl mt-8   text-center sora-600 ">Please Login Here</h2>
 
             <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:1/2 mx-auto">
                 <div className="form-control">
@@ -160,7 +160,7 @@ const Login = () => {
 
 
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] outline-none ">Login</button>
+                    <button className="btn btn-primary text-white bg-gradient-to-r from-[#d4a37b] to-[#FFB400] outline-none ">Login</button>
 
 
                     <div className="p-2 mt-6  mb-4 flex justify-center flex-col items-center " >

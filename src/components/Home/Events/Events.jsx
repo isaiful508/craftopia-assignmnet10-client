@@ -3,7 +3,7 @@ import { SlCalender } from "react-icons/sl";
 
 const Events = () => {
     return (
-        <div className="container mx-auto mt-8 mb-8">
+        <div className="container lg:w-full md:w-full w-96 mx-auto mt-8 mb-8">
             <div className="text-center">
                 <h2 className="text-4xl sora-600">Exhibition and Events</h2>
                 <p className="sora-500 mt-2">Explore captivating exhibitions and vibrant events, showcasing diverse artistic talents and immersive <br />experiences, igniting creativity and cultural appreciation.</p>

@@ -95,7 +95,7 @@ const Register = () => {
                 <title>Craftopia | Register </title>
             </Helmet>
 
-            <h2 className="text-4xl mt-8   text-center poppins-bold ">Please Register Here</h2>
+            <h2 className="text-4xl mt-8   text-center sora-600 ">Please Register Here</h2>
 
             <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:1/2 mx-auto">
                 <div className="form-control">
@@ -169,7 +169,7 @@ const Register = () => {
                 }
 
                 <div className="form-control mt-6">
-                    <button className="btn  text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] outline-none ">Register</button>
+                    <button className="btn  text-white bg-gradient-to-r from-[#d4a37b] to-[#FFB400] outline-none ">Register</button>
 
                     <p className="text-center mt-2 poppins-medium">Already Have An Account ? <Link className="text-red-500" to='/login'>Please Login </Link></p>
 

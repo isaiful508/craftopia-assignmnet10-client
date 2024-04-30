@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { FaDollarSign } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 
 const ArtAndCraftLists = () => {
@@ -24,7 +26,7 @@ const ArtAndCraftLists = () => {
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
+            confirmButtonColor: "#FFB400",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
@@ -59,6 +61,9 @@ const ArtAndCraftLists = () => {
 
     return (
         <div className=" container mx-auto ">
+            <Helmet>
+                <title>Craftopia | All Lists </title>
+            </Helmet>
 
         <div className="flex justify-end mb-4">
             <select
@@ -79,16 +84,27 @@ const ArtAndCraftLists = () => {
            {
             
             filterItems.map(item => 
-            <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
+                <div 
+                key={item._id}
+                className="card w-96 bg-base-100 shadow-xl border-2 border-[#d4a37b] rounded-lg p-4">
                 <figure>
-                    <img src={item.photoURL} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{item.itemName}</h2>
-                    <p>{item.shortDescription}</p>
-                    <p>Customization:  {item.customization}</p>
-                    <div className="card-actions ">
-                        <Link to={`/update/${item._id}`}className="btn btn-primary">Update</Link>
-                        <button onClick={() => handleDelete(item._id)} className="btn btn-primary">Delete</button>
+                  <img className="rounded-lg" src={item.photoURL} alt="craft_img" />
+                  </figure>
+        
+                <div className="p-4">
+        
+                  <h2 className="card-title sora-600">{item.itemName}</h2>
+                  <h2 className="card-title "><span className="sora-600 mt-2 mb-2">Category:</span> {item.SubCategory}</h2>
+                 
+                  <p className="sora-500">{item.shortDescription}</p>
+        
+                  <div className="flex items-center mt-4 justify-between">
+                  <p className="flex items-center sora-500">Price:  <FaDollarSign className="text-xl"></FaDollarSign> <span className="sora-500 bg-[#FFB400] btn rounded-full">{item.price}</span></p>
+                  <p className="sora-500 "> <span className="sora-600">Status:</span> <span className="btn rounded-full bg-[#FFB400]">{item.stockStatus}</span></p>
+                  </div>
+                    <div className=" card-actions  ">
+                        <Link to={`/update/${item._id}`}className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400]">Update</Link>
+                        <button onClick={() => handleDelete(item._id)} className="btn bg-gradient-to-r from-[#d4a37b] to-[#FFB400]">Delete</button>
                     </div>
                 </div>
             </div>)
