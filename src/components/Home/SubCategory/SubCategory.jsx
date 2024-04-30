@@ -1,0 +1,36 @@
+import { useLoaderData } from "react-router-dom";
+
+
+
+const SubCategory = () => {
+    const categoryLoader = useLoaderData();
+    console.log(categoryLoader);
+    return (
+        <div className="container mx-auto mt-8 mb-8">
+
+            <div className="grid border-2 border-[#d4a37b] rounded-lg p-4  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+                {
+                    categoryLoader.map(item =>
+                        <div
+                            key={item._id}
+                            className="card w-96 bg-base-100 shadow-xl">
+                            <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">{item.itemName}</h2>
+                                <h2 className="card-title">{item.SubCategory}</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+
+        </div>
+    );
+};
+
+export default SubCategory;

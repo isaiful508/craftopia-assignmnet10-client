@@ -4,7 +4,7 @@ import { FaDollarSign } from "react-icons/fa";
 
 const CraftSingleCard = ({craft}) => {
 
-        const {itemName, SubCategory, shortDescription, price, rating, customization, processingTime, stockStatus, email, userName, photoURL} = craft;
+        const {itemName, SubCategory, shortDescription, price,  stockStatus, photoURL} = craft;
     return (
         <div className="card w-96 bg-base-100 shadow-xl border-2 border-[#d4a37b] rounded-lg p-4">
         <figure>

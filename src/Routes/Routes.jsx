@@ -12,6 +12,7 @@ import Login from "../components/Pages/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import ViewDetails from "../components/Home/ViewDetails/ViewDetails";
 import Update from "../components/Pages/Update/Update";
+import SubCategory from "../components/Home/SubCategory/SubCategory";
 
   const router = createBrowserRouter([
     {
@@ -55,6 +56,11 @@ import Update from "../components/Pages/Update/Update";
           path:'/update/:id',
           element:<Update></Update>,
          
+        },
+        {
+          path:'/subCategory/:id',
+          element:<SubCategory></SubCategory>,
+          loader: () => fetch("http://localhost:5000/subCategory")
         }
       ]
     },
